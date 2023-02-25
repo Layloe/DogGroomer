@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Professional Dog Grooming Services</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Professional Dog Grooming Services</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#form">Form</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="services">
+        <h2>Services</h2>
+        <ul>
+          <li>
+            <h3>Bath & Brush</h3>
+            <p>A deep cleansing bath and brush to keep your dog looking their best. Includes nail trimming and ear cleaning.</p>
+          </li>
+          <li>
+            <h3>Haircut & Style</h3>
+            <p>A professional haircut and style to give your dog the look you want. Includes a bath and brush, nail trimming, and ear cleaning.</p>
+          </li>
+          <li>
+            <h3>De-shedding Treatment</h3>
+            <p>A deep conditioning treatment to reduce shedding and keep your home clean. Includes a bath and brush, nail trimming, and ear cleaning.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="form">
+        <h2>Form</h2>
+        <form action="/form" method="post">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+          </div>
+          <div>
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; Possible UI for other app</p>
+    </footer>
+  </body>
+</html>
