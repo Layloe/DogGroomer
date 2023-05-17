@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const port = process.env.PORT || 5000;
+
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -50,6 +50,8 @@ const formDataSchema = new mongoose.Schema({
   }
 });
 
+
+
 const FormData = mongoose.model("FormData", formDataSchema);
 
 app.post("/form", async (req, res) => {
@@ -66,12 +68,24 @@ app.post("/form", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "build")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+})
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+// app.get('/form', (req,res) => {
+//   return res.send('pong')
+// })
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
+
+const reactPort = 8000
+const apiPort = process.env.PORT || 8001
+
+
+app.listen(apiPort, () => {
+  console.log(`API server listening on port ${apiPort}`);
 });
